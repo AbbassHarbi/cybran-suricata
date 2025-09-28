@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  suricataa:
+    image: abbassharbi/cybran-suricata:V1.1
+    container_name: suricata-agent
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - /opt/suricata/logs:/var/log/suricata
+    restart: unless-stopped
